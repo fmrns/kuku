@@ -1,12 +1,18 @@
 #include <stdio.h>
 
+#ifdef IN_JAPAN
+#define MAX (9)
+#else
+#define MAX (12)
+#endif
+
 int main(void)
 {
   int kk;
-  for (kk = 0; kk <= 9 * 8 + 8; ++kk)
+  for (kk = 0; kk < MAX * MAX; ++kk)
   {
-    printf("%2d%c", (1 + kk / 9) * (1 + kk % 9),
-           ' ' + kk % 9 / 8 * ('\n' - ' '));
+    printf("%3d%c", (1 + kk / MAX) * (1 + kk % MAX),
+           ' ' + kk % MAX / (MAX - 1) * ('\n' - ' '));
   }
   return 0;
 }
