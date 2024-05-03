@@ -1,1 +1,3 @@
 # kuku
+
+inspired by fellow instructors last night...
